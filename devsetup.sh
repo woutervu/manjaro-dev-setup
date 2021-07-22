@@ -1,18 +1,17 @@
 #!/bin/bash
 
 # Update
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Change theme
 sed -i '/ZSH_THEME="robbyrussell"/c\ZSH_THEME="agnoster"' ~/.zshrc
-. ~/.zshrc
 
 # Install terminator
 sudo pacman -S terminator --noconfirm
 # Setup terminator config
-cat config/terminator.txt > ~/.config/terminator/config
+cp config/terminator.txt ~/.config/terminator/config
 
 # Install docker
 sudo pacman -S docker --noconfirm
@@ -28,3 +27,5 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # Change default shell
 chsh -s $(which zsh)
+zsh
+. ~/.zshrc
