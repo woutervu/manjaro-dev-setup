@@ -13,7 +13,7 @@ sed -i '/ZSH_THEME="robbyrussell"/c\ZSH_THEME="agnoster"' ~/.zshrc
 # Install terminator
 sudo pacman -S terminator --noconfirm
 # Setup terminator config
-cat terminator.txt > ~/.config/terminator/config
+cat config/terminator.txt > ~/.config/terminator/config
 
 # Install docker
 sudo pacman -S docker --noconfirm
