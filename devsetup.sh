@@ -25,7 +25,10 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 
+# Install PHPStorm
+PSTORM="https://data.services.jetbrains.com/products/download?code=PS&platform=linux"
+curl -s $PSTORM
+
 # Change default shell
 chsh -s $(which zsh)
 zsh
-. ~/.zshrc
