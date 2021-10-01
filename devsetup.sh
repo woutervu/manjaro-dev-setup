@@ -24,10 +24,20 @@ sudo usermod -aG docker $USER
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+# Install Jetbrains toolbox
+TOOLBOX="https://data.services.jetbrains.com/products/download?code=TB&platform=linux"
+wget -O toolbox.tar.gz $TOOLBOX
+tar -xvzf toolbox.tar.gz
+
 
 # Install PHPStorm
 PSTORM="https://data.services.jetbrains.com/products/download?code=PS&platform=linux"
-curl -s $PSTORM
+wget -O phpstorm.tar.gz $PSTORM
+tar -xvzf phpstorm.tar.gz
+DIRNAME=$(find -name "PhpStorm-*" -type d)
+sudo mv $DIRNAME /opt/phpstorm
+
+
 
 # Change default shell
 chsh -s $(which zsh)
